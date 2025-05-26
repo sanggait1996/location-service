@@ -66,6 +66,7 @@ Each user document contains:
 | email    | String | User email address | Yes      |
 | username | String | Unique username    | Yes      |
 | password | String | Hashed password    | Yes      |
+| role     | Number | Role               | Yes      |
 
 ### Location Model
 
