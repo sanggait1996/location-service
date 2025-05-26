@@ -12,8 +12,11 @@ services:
       - mongodb
     environment:
       - NODE_ENV=development
+      - MONGO_URI=mongodb://location-service-mongodb:27017/location-service
     volumes:
       - ./src:/app/src
+    env_file:
+      - .env
     networks:
       - location-network
     restart: unless-stopped
