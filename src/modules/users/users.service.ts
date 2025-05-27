@@ -66,26 +66,6 @@ export class UsersService {
     return bcrypt.compare(refreshToken, user.refreshToken);
   }
 
-  // async updateProfile(
-  //   userId: string,
-  //   updateData: { username?: string },
-  // ): Promise<User> {
-  //   if (updateData.username) {
-  //     const existingUser = await this.userModel.findOne({
-  //       username: updateData.username,
-  //       _id: { $ne: userId },
-  //     });
-
-  //     if (existingUser) {
-  //       throw new ConflictException('Username already taken');
-  //     }
-  //   }
-
-  //   return this.userModel
-  //     .findByIdAndUpdate(userId, updateData, { new: true })
-  //     .exec();
-  // }
-
   async updateProfile(
     userId: string,
     updateData: { username?: string },

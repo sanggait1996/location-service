@@ -18,7 +18,7 @@ export class User extends Document {
   @Exclude()
   password: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, default: 1 })
   role: number;
 
   @Prop({ default: true })
@@ -36,3 +36,4 @@ export type UserDocument = User & Document;
 
 UserSchema.index({ role: 1 });
 UserSchema.index({ email: 1, isActive: 1 });
+UserSchema.index({ isActive: 1, role: 1 });

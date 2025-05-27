@@ -7,6 +7,7 @@ import {
   IsInt,
   Min,
   Max,
+  IsOptional,
 } from 'class-validator';
 
 export class RegisterDto {
@@ -27,8 +28,9 @@ export class RegisterDto {
   })
   password: string;
 
+  @IsOptional()
   @IsInt()
-  @Min(0)
-  @Max(2)
-  role: number;
+  @Min(1)
+  @Max(4)
+  role?: number;
 }
